@@ -104,7 +104,7 @@ nav ul {
 
 #Hero {
     background-color: var(--color-primary-1);
-    height: 30vh;
+    height: 25rem;
     color: var(--color-white);
     padding: 2rem 0;
 }
@@ -241,4 +241,28 @@ nav ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+}
+
+#Testimonials .reviews .reviews_card {
+  display: flex;
+  gap: 1rem;
+}
+
+#Testimonials .reviews figure {
+  overflow: hidden;
+  border-radius: 1rem;
+  width: 6.25rem;
+  height: 6.25rem;
+  display: flex;
+  flex-shrink: 0;
+}
+
+#Testimonials .reviews_content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#Testimonials .reviews_content p {
+  font-size: 1rem;
 }
