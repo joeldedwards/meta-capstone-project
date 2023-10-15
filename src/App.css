@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&display=swap');
+
+:root {
+    --font-primary: 'Markazi Text', serif;
+    --font-secondary: 'Karla', serif;
+    --color-primary-1: #495E57;
+    --color-primary-2: #F4CE14;
+    --color-secondary-1: #EE9972;
+    --color-secondary-2: #FBDABB;
+    --color-secondary-3: #EDEFEE;
+    --color-secondary-4: #333;
+    --color-black: #000;
+    --color-white: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body  {
+    font-family: var(--font-secondary);
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: auto;
+}
+
+a,
+a:visited {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-family: var(--font-primary);
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 3rem;
+}
+
+h2 {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+button {
+    background-color: var(--color-primary-2);
+    color: var(--color-black);
+    border-radius: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    border: 0;
+    cursor: pointer;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+button:hover {
+    background-color: var(--color-secondary-4);
+    color: var(--color-white);
+}
+
+header {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6.25rem;
+}
+
+header img {
+    width: 16rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+/* Hero Section */
+
+#Hero {
+    background-color: var(--color-primary-1);
+    height: 30vh;
+    color: var(--color-white);
+    padding: 2rem 0;
+}
+
+#Hero h1 {
+    color: var(--color-primary-2);
+}
+
+#Hero h2 {
+    margin-bottom: 1rem;
+}
+
+#Hero p {
+    margin-bottom: 1rem;
+    max-width: 20rem;
+}
+
+#Hero .container {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+}
+
+#Hero .right-section {
+    position: relative;
+}
+
+#Hero .right-section figure {
+    width: 25rem;
+    height: 30rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+#Hero .right-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Menu Section */
+
+#Menu {
+    margin-top: 12rem;
+}
+
+#Menu .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+#Menu .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+#Menu .card {
+    background-color: var(--color-secondary-3);
+    overflow: hidden;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+#Menu .card figure {
+    max-height: 17rem;
+    overflow: hidden;
+}
+
+#Menu .card figure img {
+    width: 100%;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+#Menu .card:hover img {
+    transform: scale(1.2);
+}
+
+#Menu .card .content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+#Menu .card .info {
+    display: flex;
+    justify-content: space-between;
+}
+
+#Menu .card .title,
+#Menu .card .price {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+#Menu .card .price {
+    color: var(--color-secondary-1);
+}
+
+#Menu .card p {
+    color: var(--color-primary-1);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+#Menu .card a {
+    margin-bottom: 1rem;
+}
+
+/* Testimonials Section */
+
+#Testimonials {
+    background-color: var(--color-secondary-4);
+    background-image: url(../images/counter-bg.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 30vh;
+    color: var(--color-white);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+#Testimonials h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#Testimonials .reviews {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}

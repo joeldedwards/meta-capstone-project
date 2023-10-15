@@ -1,9 +1,16 @@
 import React from 'react'
+import Hero from './Hero'
+import Menu from './Menu'
+import Testimonials from './Testimonials'
 
 function Main() {
   return (
     <>
-      <main>Main</main>
+      <main>
+        <Hero />
+        <Menu />
+        <Testimonials />
+      </main>
     </>
   )
 }

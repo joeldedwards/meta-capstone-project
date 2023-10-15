@@ -1,26 +1,11 @@
 import React from 'react'
+import Nav from './Nav'
 
 function Header() {
   return (
-    <header className='bg-black'>
-      <img src="" alt="" />
-      <ul>
-        <li>
-          <a href="">Home</a>
-        </li>
-        <li>
-          <a href="">About</a>
-        </li>
-        <li>
-          <a href="">Reservations</a>
-        </li>
-        <li>
-          <a href="">Order Online</a>
-        </li>
-        <li>
-          <a href="">Login</a>
-        </li>
-      </ul>
+    <header>
+      <img src="/images/logo-h-yw.png" alt="Little Lemon" />
+      <Nav />
     </header>
   )
 }
