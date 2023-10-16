@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-  faStar,
-  faStarHalfStroke
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Review from './Review';
 
 function Testimonials() {
 
@@ -45,24 +41,13 @@ function Testimonials() {
             <div className="reviews">
               {
                 customerReviews.map((review) => (
-                  <div key={review.id} className="reviews_card">
-                    <figure>
-                      <img src={review.img} alt={review.name} />
-                    </figure>
-                    <div className="reviews_content">
-                      <div className="ratings">
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStarHalfStroke} />
-                      </div>
-                      <h3>{review.name}</h3>
-                    </div>
-                    <p>
-                      {review.quote}
-                    </p>
-                  </div>
+                  <Review
+                    key={review.id}
+                    name={review.name}
+                    img={review.img}
+                    rating={review.rating}
+                    quote={review.quote}
+                  />
                 ))
               }
             </div>

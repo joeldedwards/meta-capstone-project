@@ -52,16 +52,16 @@ function Footer() {
           <h3>Socials</h3>
           <ul>
               <li>
-                <FontAwesomeIcon icon={faFacebook} />
+                <FontAwesomeIcon icon={faFacebook} title="Facebook" />
               </li>
               <li>
-                <FontAwesomeIcon icon={faTwitter} />
+                <FontAwesomeIcon icon={faTwitter} title="Twitter" />
               </li>
               <li>
-                <FontAwesomeIcon icon={faInstagram} />
+                <FontAwesomeIcon icon={faInstagram} title="Instagram" />
               </li>
               <li>
-                <FontAwesomeIcon icon={faYoutube} />
+                <FontAwesomeIcon icon={faYoutube} title="YouTube" />
               </li>
           </ul>
         </div>
