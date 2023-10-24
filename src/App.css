@@ -438,13 +438,18 @@ footer ul li .svg-inline--fa {
 
 #Reservation form input,
 #Reservation form select {
-    height: 60px;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    height: 3.75rem;
     background: none;
     display: block;
     padding: 1rem;
     border: 1px solid var(--color-secondary-3);
 }
+
 #Reservation form textarea {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
     background: none;
     display: block;
     padding: 1rem;

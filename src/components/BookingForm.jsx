@@ -1,23 +1,28 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
-function BookingForm() {
+function BookingForm({availableTimes, dispatchDateChange}) {
 
-    const [resDate, setResDate] = useState('');
-    const [availableTimes , setAvailableTimes ] = useState([
-        '17:00',
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00',
-        '22:00',
-    ]);
     const [guests, setGuests] = useState('');
     const [occasion, setOccasion] = useState('occasion');
     const [message, setMessage] = useState('');
 
+    const minDate = new Date().toISOString().split('T')[0];
+    const defaultTime = availableTimes[0];
+    const [resDate, setResDate] = useState(minDate);
+    const [time, setTime] = useState(defaultTime);
+
+    const handleDateChange = e => {
+        setResDate(e.target.value);
+        dispatchDateChange(e.target.value);
+    };
+    
+    const handleTimeChange = (e) => {
+        setTime(e.target.value);
+    }
+
     const clearForm = () => {
         setResDate('');
-        setAvailableTimes('availableTimes');
+        dispatchDateChange('availableTimes');
         setGuests('');
         setOccasion('occasion');
         setMessage('');
@@ -32,24 +37,26 @@ function BookingForm() {
   return (
     <section id="Reservation">
         <div className="container">
+            <h1>Book Now</h1>
             <form onSubmit={handleSubmit}>
                 <fieldset>
                     <label htmlFor="res-date">Choose Date</label>
                     <input 
                         type="date" 
                         id="res-date" 
+                        min={minDate}
                         value={resDate}
-                        onChange={(e) => { setResDate(e.target.value); }}></input>
+                        onChange={handleDateChange}></input>
                 </fieldset>
                 <fieldset>
                     <label htmlFor="res-time">Choose Time</label>
                     <select 
                         id="res-time" 
-                        value={availableTimes}
-                        onChange={(e) => setAvailableTimes(e.target.value)}>
+                        value={time}
+                        onChange={handleTimeChange}>
                         {
-                            availableTimes.map((time, index) => (
-                                <option key={index} value={time}>{time}</option>
+                            availableTimes.map((item, index) => (
+                                <option key={index}>{item}</option>
                             ))
                         }
                     </select>

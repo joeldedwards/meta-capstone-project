@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 function Card({id, title, img, price, description}) {
   return (
