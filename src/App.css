@@ -32,6 +32,7 @@ body  {
 
 a,
 a:visited {
+    font-size: 1.125rem;
     font-weight: 600;
     text-decoration: none;
     color: var(--color-black);
@@ -99,7 +100,7 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 /* Hero Section */
@@ -416,6 +417,11 @@ footer ul li .svg-inline--fa {
     padding: 5rem 0;
 }
 
+#Reservation h1 {
+    color: var(--color-primary-1);
+    margin-bottom: 1.5rem;
+}
+
 #Reservation form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -461,6 +467,48 @@ footer ul li .svg-inline--fa {
     grid-column: 1 / span 2;
 }
 
+/* Under Construction */
+
+#UnderConstruction {
+    background-image: url('./images/hero_img.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    margin-bottom: 10rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#UnderConstruction h1 {
+    font-family: var(--font-primary);
+    color: var(--color-white);
+    font-size: 8rem;
+    text-align: center;
+}
+
+.banner-shape-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    opacity: 1;
+    transition-delay: 0.7s;
+}
+
+.banner-shape-area .shape {
+    height: 10px;
+    width: 10px;
+    line-height: 10px;
+    transform: rotate(45deg);
+    margin: 0 6px;
+    background-color: var(--color-primary-2);
+    display: block;
+}
 
 @keyframes rotate {
     from {

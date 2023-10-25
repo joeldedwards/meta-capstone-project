@@ -20,8 +20,8 @@ function Reservation() {
     <>
         <section id="BookingHero">
         </section>
-        <BookingForm 
-          availableTimes={availableTimes} 
+        <BookingForm
+          availableTimes={availableTimes}
           dispatchDateChange={dispatchDateChange} />
     </>
   )
