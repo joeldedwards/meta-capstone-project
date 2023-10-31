@@ -10,6 +10,8 @@ function BookingForm({availableTimes, dispatchDateChange, submitForm}) {
     const [occasion, setOccasion] = useState('occasion');
     const [message, setMessage] = useState('');
 
+    const [formData, setFormData] = useState({});
+
     const handleDateChange = e => {
         setResDate(e.target.value);
         dispatchDateChange(e.target.value);
