@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 import Reservation from './components/Reservation'
 import UnderConstruction from './components/UnderConstruction'
+import ConfirmedBooking from './components/ConfirmedBooking'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/reserve" element={<Reservation />}></Route>
           <Route path="/order" element={<UnderConstruction />}></Route>
           <Route path="/login" element={<UnderConstruction />}></Route>
+          <Route path="/confirmation" element={<ConfirmedBooking />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

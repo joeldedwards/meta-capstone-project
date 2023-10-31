@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function BookingForm({availableTimes, dispatchDateChange}) {
+function BookingForm({availableTimes, dispatchDateChange, submitForm}) {
 
     const minDate = new Date().toISOString().split('T')[0];
     const selectedTime = availableTimes[0];
@@ -19,18 +19,9 @@ function BookingForm({availableTimes, dispatchDateChange}) {
         setTime(e.target.value);
     }
 
-    const clearForm = () => {
-        setResDate(minDate);
-        setTime(selectedTime);
-        setGuests('');
-        setOccasion('occasion');
-        setMessage('');
-    };
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert("Reservation Booked!");
-        clearForm();
+        submitForm({});
     };
 
   return (

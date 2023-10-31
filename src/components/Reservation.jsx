@@ -1,5 +1,6 @@
 import { useReducer } from 'react'
-import { fetchAPI } from '../utils/API';
+import { useNavigate } from 'react-router-dom'
+import { fetchAPI, submitAPI } from '../utils/API';
 import BookingForm from './BookingForm'
 
 const updateTimes = (availableTimes, date) => {
@@ -11,10 +12,19 @@ const updateTimes = (availableTimes, date) => {
 const initializeTimes = (initialTimes) => {
   return [...initialTimes, ...fetchAPI(new Date())];
 }
-
 function Reservation() {
 
   const [availableTimes, dispatchDateChange] = useReducer(updateTimes, [], initializeTimes);
+
+  const navigate = useNavigate();
+
+  const submitForm = (formData) => {
+    const isFormSubmitted = submitAPI(formData);
+
+    if(isFormSubmitted) {
+      navigate('/confirmation');
+    }
+  }
 
   return (
     <>
@@ -22,7 +32,8 @@ function Reservation() {
         </section>
         <BookingForm
           availableTimes={availableTimes}
-          dispatchDateChange={dispatchDateChange} />
+          dispatchDateChange={dispatchDateChange}
+          submitForm={submitForm} />
     </>
   )
 }

@@ -2,10 +2,10 @@ const seededRandom = (seed) => {
     const m = 2 ** 35 - 31;
     const a = 185852;
     let s = seed % m;
-  
+
     return () => (s = s * a % m) / m;
 }
-  
+
 const fetchAPI = (date) => {
     let result = [];
     let random = seededRandom(date.getDate());
@@ -18,6 +18,20 @@ const fetchAPI = (date) => {
     return result;
 }
 
+const submitAPI = (formData) => {
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (formData) {
+                resolve(true);
+            } else {
+                reject(new Error('Form submission failed.'));
+            }
+        }, 1000);
+    });
+}
+
 export {
-    fetchAPI
+    fetchAPI,
+    submitAPI
 }
