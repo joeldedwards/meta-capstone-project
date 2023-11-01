@@ -1,30 +1,32 @@
 import { useState } from 'react'
 
-function BookingForm({availableTimes, dispatchDateChange, submitForm}) {
+function BookingForm({ availableTimes, dispatchDateChange, submitForm }) {
 
     const minDate = new Date().toISOString().split('T')[0];
     const selectedTime = availableTimes[0];
-    const [resDate, setResDate] = useState(minDate);
-    const [time, setTime] = useState(selectedTime);
-    const [guests, setGuests] = useState('');
-    const [occasion, setOccasion] = useState('occasion');
-    const [message, setMessage] = useState('');
 
-    const [formData, setFormData] = useState({});
+    const [formData, setFormData] = useState({
+        resDate: minDate,
+        resTime: selectedTime,
+        guests: '',
+        occasion: 'birthday',
+        message: ''
+    });
 
-    const handleDateChange = e => {
-        setResDate(e.target.value);
-        dispatchDateChange(e.target.value);
-    };
-
-    const handleTimeChange = (e) => {
-        setTime(e.target.value);
+    const handleFormChange = (e) => {
+        if(e.target.id === 'resDate') {
+            dispatchDateChange(e.target.value);
+        }
+        setFormData({
+            ...formData,
+            [e.target.id]: e.target.value,
+        })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        submitForm({});
-    };
+        submitForm(formData);
+    }
 
   return (
     <section id="Reservation">
@@ -32,20 +34,18 @@ function BookingForm({availableTimes, dispatchDateChange, submitForm}) {
             <h1>Book Now</h1>
             <form onSubmit={handleSubmit}>
                 <fieldset>
-                    <label htmlFor="res-date">Choose Date</label>
+                    <label htmlFor="resDate">Choose Date</label>
                     <input
                         type="date"
-                        id="res-date"
+                        id="resDate"
                         min={minDate}
-                        value={resDate}
-                        onChange={handleDateChange}></input>
+                        onChange={handleFormChange}></input>
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="res-time">Choose Time</label>
+                    <label htmlFor="resTime">Choose Time</label>
                     <select
-                        id="res-time"
-                        value={time}
-                        onChange={handleTimeChange}>
+                        id="resTime"
+                        onChange={handleFormChange}>
                         {
                             availableTimes.map((item, index) => (
                                 <option key={index}>{item}</option>
@@ -61,15 +61,13 @@ function BookingForm({availableTimes, dispatchDateChange, submitForm}) {
                         min="1"
                         max="10"
                         id="guests"
-                        value={guests}
-                        onChange={(e) => { setGuests(e.target.value); }} />
+                        onChange={handleFormChange} />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="occasion">Occasion</label>
                     <select
                         id="occasion"
-                        value={occasion}
-                        onChange={(e) => setOccasion(e.target.value)}>
+                        onChange={handleFormChange}>
                         <option value="birthday">Birthday</option>
                         <option value="anniversary">Anniversary</option>
                     </select>
@@ -82,8 +80,7 @@ function BookingForm({availableTimes, dispatchDateChange, submitForm}) {
                         cols="30"
                         rows="10"
                         placeholder="Message"
-                        value={message}
-                        onChange={(e) => { setMessage(e.target.value); }}></textarea>
+                        onChange={handleFormChange}></textarea>
                 </fieldset>
                 <button type="submit">Make Your reservation</button>
             </form>
