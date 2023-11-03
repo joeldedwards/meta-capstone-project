@@ -1,19 +1,19 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import Reservation from './Reservation';
-import { describe } from 'vitest';
+import { describe, it, expect } from 'vitest';
 
 describe('Booking Form', () => {
-    
+
     it('Renders the BookingForm heading', () => {
         render(<Reservation />);
-        const headingElement = screen.getByText("Book Now");
+        const headingElement = screen.getByText("Reservation");
 
         expect(headingElement).toBeInTheDocument();
     })
 })
 
 describe('initalizeTimes function', () => {
-    
+
     it('Should initialize the availableTimes state', () => {
         const { container } = render(<Reservation />);
         const timesList = container.querySelector('select');
@@ -30,12 +30,12 @@ describe('initalizeTimes function', () => {
         const actualTimes = Array.from(timesItems).map((item) => item.textContent);
 
         expect(actualTimes).toEqual(availableTimes);
-        
+
     })
 })
 
 describe('updateTimes function', () => {
-    
+
     it('Should return the same values provided', () => {
         const { container } = render(<Reservation />);
         const dateList = container.querySelector('select');

@@ -29,6 +29,12 @@ function Reservation() {
   return (
     <>
         <section id="BookingHero">
+          <div className="banner-shape-area">
+              <span className="shape"></span>
+              <span className="shape"></span>
+              <span className="shape"></span>
+          </div>
+          <h1>Reservation</h1>
         </section>
         <BookingForm
           availableTimes={availableTimes}

@@ -409,8 +409,33 @@ footer ul li .svg-inline--fa {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    filter: grayscale(1);
     height: 30vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#BookingHero::before {
+    content: '';
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+#BookingHero h1 {
+    font-family: var(--font-primary);
+    color: var(--color-white);
+    font-size: 8rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 #Reservation {
@@ -422,28 +447,28 @@ footer ul li .svg-inline--fa {
     margin-bottom: 1.5rem;
 }
 
-#Reservation form {
+form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
-#Reservation form fieldset {
+form fieldset {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     border: 0;
 }
 
-#Reservation form label {
+form label {
     display: block;
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1rem;
 }
 
-#Reservation form input,
-#Reservation form select {
+form input,
+form select {
     font-family: var(--font-secondary);
     font-size: 1rem;
     height: 3.75rem;
@@ -453,7 +478,7 @@ footer ul li .svg-inline--fa {
     border: 1px solid var(--color-secondary-3);
 }
 
-#Reservation form textarea {
+form textarea {
     font-family: var(--font-secondary);
     font-size: 1rem;
     background: none;
@@ -462,8 +487,8 @@ footer ul li .svg-inline--fa {
     border: 1px solid var(--color-secondary-3);
 }
 
-#Reservation form fieldset:last-of-type,
-#Reservation form button {
+form fieldset:last-of-type,
+form button {
     grid-column: 1 / span 2;
 }
 
@@ -474,7 +499,7 @@ footer ul li .svg-inline--fa {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 50vh;
+    height: 30vh;
     margin-bottom: 10rem;
     position: relative;
     overflow: hidden;
@@ -527,6 +552,49 @@ footer ul li .svg-inline--fa {
     z-index: 10;
 }
 
+/* My Account */
+
+#MyAccount {
+    background-image: url('./images/restaurant.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    margin-bottom: 5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#MyAccount::before {
+    content: '';
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+#MyAccount h1 {
+    font-family: var(--font-primary);
+    color: var(--color-white);
+    font-size: 8rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Login */
+
+#Login {
+    margin-bottom: 5rem;
+}
+
 .banner-shape-area {
     display: flex;
     align-items: center;
@@ -546,6 +614,7 @@ footer ul li .svg-inline--fa {
     background-color: var(--color-primary-2);
     display: block;
 }
+
 
 @keyframes rotate {
     from {

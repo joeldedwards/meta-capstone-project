@@ -31,7 +31,6 @@ function BookingForm({ availableTimes, dispatchDateChange, submitForm }) {
   return (
     <section id="Reservation">
         <div className="container">
-            <h1>Book Now</h1>
             <form onSubmit={handleSubmit}>
                 <fieldset>
                     <label htmlFor="resDate">Choose Date</label>
@@ -82,7 +81,7 @@ function BookingForm({ availableTimes, dispatchDateChange, submitForm }) {
                         placeholder="Message"
                         onChange={handleFormChange}></textarea>
                 </fieldset>
-                <button type="submit">Make Your reservation</button>
+                <button type="submit">Make Your Reservation</button>
             </form>
         </div>
     </section>

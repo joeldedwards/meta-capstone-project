@@ -1,5 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 
 function Hero() {
+
+    const navigate = useNavigate();
+
+    const reserveBtn = () => {
+        navigate('/reserve');
+    }
+
   return (
     <section id="Hero">
         <div className="container">
@@ -10,7 +18,7 @@ function Hero() {
                     We are a family owned Mediterranean restaurant,
                     focused on traditional recipes served with a modern twist.
                 </p>
-                <button type="button">Reserve a Table</button>
+                <button type="button" onClick={reserveBtn}>Reserve a Table</button>
             </div>
             <div className="right-section">
                 <figure>
