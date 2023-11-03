@@ -467,6 +467,12 @@ form label {
     line-height: 1rem;
 }
 
+form label span {
+    color: var(--color-secondary-1);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
 form input,
 form select {
     font-family: var(--font-secondary);
@@ -593,6 +599,14 @@ form button {
 
 #Login {
     margin-bottom: 5rem;
+}
+
+#Login form {
+    grid-template-columns: 1fr;
+    gap: 0;
+    row-gap: 2rem;
+    margin: 0 auto;
+    max-width: 40rem;
 }
 
 .banner-shape-area {

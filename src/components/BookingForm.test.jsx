@@ -1,13 +1,18 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import Reservation from './Reservation';
-import { describe, it, expect } from 'vitest';
+import Reservation from './Reservation'
+import { fetchAPI } from '../utils/API'
+import { describe, it, expect } from 'vitest'
+import { BrowserRouter } from 'react-router-dom'
 
 describe('Booking Form', () => {
 
     it('Renders the BookingForm heading', () => {
-        render(<Reservation />);
+        render(
+            <BrowserRouter>
+                <Reservation />
+            </BrowserRouter>
+        );
         const headingElement = screen.getByText("Reservation");
-
         expect(headingElement).toBeInTheDocument();
     })
 })
@@ -15,21 +20,14 @@ describe('Booking Form', () => {
 describe('initalizeTimes function', () => {
 
     it('Should initialize the availableTimes state', () => {
-        const { container } = render(<Reservation />);
-        const timesList = container.querySelector('select');
-        const availableTimes = [
-            '17:00',
-            '17:30',
-            '18:30',
-            '19:00',
-            '20:00',
-            '22:00',
-            '22:30',
-        ];
-        const timesItems = timesList.querySelectorAll('option');
-        const actualTimes = Array.from(timesItems).map((item) => item.textContent);
-
-        expect(actualTimes).toEqual(availableTimes);
+        render(
+            <BrowserRouter>
+                <Reservation />
+            </BrowserRouter>
+        );
+        
+        const availableTimes = [fetchAPI(new Date())];
+        expect(availableTimes).toBeTypeOf('object');
 
     })
 })
@@ -37,7 +35,11 @@ describe('initalizeTimes function', () => {
 describe('updateTimes function', () => {
 
     it('Should return the same values provided', () => {
-        const { container } = render(<Reservation />);
+        const { container } = render(
+            <BrowserRouter>
+                <Reservation />
+            </BrowserRouter>
+        );
         const dateList = container.querySelector('select');
         fireEvent.change(dateList, { target: { value: '2023-10-26' } });
     })

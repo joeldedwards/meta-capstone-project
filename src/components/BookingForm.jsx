@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function BookingForm({ availableTimes, dispatchDateChange, submitForm }) {
 
@@ -25,6 +25,7 @@ function BookingForm({ availableTimes, dispatchDateChange, submitForm }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        localStorage.setItem('formData', JSON.stringify(formData));
         submitForm(formData);
     }
 
@@ -33,18 +34,20 @@ function BookingForm({ availableTimes, dispatchDateChange, submitForm }) {
         <div className="container">
             <form onSubmit={handleSubmit}>
                 <fieldset>
-                    <label htmlFor="resDate">Choose Date</label>
+                    <label htmlFor="resDate">Choose Date <span>*</span></label>
                     <input
                         type="date"
                         id="resDate"
                         min={minDate}
-                        onChange={handleFormChange}></input>
+                        onChange={handleFormChange}
+                        required></input>
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="resTime">Choose Time</label>
+                    <label htmlFor="resTime">Choose Time <span>*</span></label>
                     <select
                         id="resTime"
-                        onChange={handleFormChange}>
+                        onChange={handleFormChange}
+                        required>
                         {
                             availableTimes.map((item, index) => (
                                 <option key={index}>{item}</option>
