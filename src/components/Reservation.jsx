@@ -12,6 +12,7 @@ const updateTimes = (availableTimes, date) => {
 const initializeTimes = (initialTimes) => {
   return [...initialTimes, ...fetchAPI(new Date())];
 }
+
 function Reservation() {
 
   const [availableTimes, dispatchDateChange] = useReducer(updateTimes, [], initializeTimes);

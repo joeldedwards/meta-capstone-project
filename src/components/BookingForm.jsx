@@ -84,7 +84,7 @@ function BookingForm({ availableTimes, dispatchDateChange, submitForm }) {
                         placeholder="Message"
                         onChange={handleFormChange}></textarea>
                 </fieldset>
-                <button type="submit">Make Your Reservation</button>
+                <button type="submit" aria-label="On Click">Make Your Reservation</button>
             </form>
         </div>
     </section>
