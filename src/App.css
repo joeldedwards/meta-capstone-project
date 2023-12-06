@@ -391,6 +391,10 @@ footer ul li .svg-inline--fa {
   cursor: pointer;
 }
 
+footer ul li .svg-inline--fa:hover {
+    color: var(--color-primary-2);
+}
+
 .copyright {
     color: var(--color-primary-1);
     display: flex;
