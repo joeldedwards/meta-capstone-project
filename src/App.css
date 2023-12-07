@@ -101,6 +101,24 @@ nav ul {
     display: flex;
     list-style: none;
     gap: 1.5rem;
+    position: relative;
+}
+
+nav ul button {
+    display: none;
+    color: var(--color-black);
+    background-color: var(--color-primary-2);
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+}
+
+nav button {
+    background-color: transparent;
+    font-size: 1.25rem;
+    display: none;
 }
 
 /* Hero Section */
@@ -631,6 +649,124 @@ form button {
     margin: 0 6px;
     background-color: var(--color-primary-2);
     display: block;
+}
+
+/* Media Queries */
+
+@media screen and (max-width : 991px) {
+    header {
+        padding: 1rem;
+    }
+    header img {
+        width: 12rem;
+    }
+    nav ul {
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 340px;
+        padding: 46px 30px 50px 30px;
+        height: 100%;
+        display: block;
+        background-color: white;
+        backdrop-filter: blur(7px);
+        z-index: 1900;
+        transition: all 600ms ease;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        overflow: visible;
+    }
+    nav ul button {
+        display: flex;
+    }
+    nav ul.show {
+        right: 0;
+        overflow-y: auto;
+    }
+    nav button {
+        color: var(--color-primary-1);
+        display: flex;
+    }
+    #BookingHero h1,
+    #UnderConstruction h1,
+    #MyAccount h1,
+    h1 {
+        font-size: 2rem;
+        line-height: normal;
+    }
+    button {
+        font-size: 0.75rem;
+    }
+    .container {
+        padding: 1rem;
+    }
+    #Hero .left-section::after {
+        position: fixed;
+        z-index: 0;
+    }
+    #Hero .right-section figure {
+        display: none;
+    }
+    #Menu {
+        margin-top: 5rem;
+    }
+    #Menu .cards {
+        grid-template-columns: 1fr;
+    }
+    #About {
+        padding: 5rem 0;
+    }
+    #About .container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #About .right-section figure {
+        width: 10rem;
+        height: 13rem;
+    }
+    #About .right-section figure:first-of-type {
+        left: auto;
+        top: auto;
+        z-index: 2;
+        position: relative;
+    }
+    #About .right-section figure:last-of-type {
+        display: none;
+    }
+    #About p {
+        font-size: 0.95rem;
+    }
+    #Testimonials .reviews {
+        grid-template-columns: 1fr;
+    }
+    footer .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    footer h3 {
+        display: none;
+    }
+    footer figure {
+        display: none;
+    }
+    footer .footer-1 ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 2rem;
+    }
+    footer .footer-2 ul {
+        gap: 0.5rem;
+        text-align: center;
+    }
+    footer .footer-3 ul {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 
